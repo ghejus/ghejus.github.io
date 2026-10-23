@@ -1,0 +1,7 @@
+# Only the website itself is published. Notes, drafts and tool files stay on this computer.
+.impeccable/
+.playwright-mcp/
+regions.json
+PRODUCT.md
+DESIGN.md
+assets/**/*.json
