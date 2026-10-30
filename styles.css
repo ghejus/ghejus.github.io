@@ -65,10 +65,11 @@ a { color: inherit; }
   text-underline-offset: .25em;
 }
 .nav a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
-.nav-card { left: calc(1012 * var(--u)); width: calc(52 * var(--u)); }
-.nav-sunbreak { left: calc(1104 * var(--u)); width: calc(84 * var(--u)); }
+.nav-card { left: calc(886 * var(--u)); width: calc(52 * var(--u)); }
+.nav-sunbreak { left: calc(980 * var(--u)); width: calc(84 * var(--u)); }
+.nav-bookbell { left: calc(1106 * var(--u)); width: calc(80 * var(--u)); }
 .nav-linkedin { left: calc(1232 * var(--u)); width: calc(80 * var(--u)); }
-.nav-sunbreak::before, .nav-linkedin::before {
+.nav-sunbreak::before, .nav-bookbell::before, .nav-linkedin::before {
   content: ""; position: absolute; top: 18%; bottom: 18%;
   left: calc(-20 * var(--u)); width: 1px; background: var(--gold); opacity: .8;
 }
@@ -238,6 +239,10 @@ html, body { overflow-x: clip; }
 .ghost .ico-sm { width: 18px; height: 18px; transition: transform .35s cubic-bezier(.16, 1, .3, 1); }
 .ghost:hover .ico-sm { transform: translateX(4px); }
 .fine { font-size: .9rem; color: #c9c1b1; }
+/* Two stock buttons side by side, tilted opposite ways like cards dropped on the felt. */
+.release-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 28px; }
+.release-links .ghost:nth-child(2) { rotate: 1.5deg; }
+.release-links .ghost:nth-child(2):hover { rotate: 0deg; }
 
 .close { padding: 72px 16px 128px; display: grid; justify-items: center; }
 .close-card {
@@ -281,6 +286,7 @@ html, body { overflow-x: clip; }
   html { scroll-behavior: auto; }
   .slab, .insert, .cta, .ghost { transition: none; }
   .ghost:hover { rotate: -1.5deg; translate: none; }
+  .release-links .ghost:nth-child(2):hover { rotate: 1.5deg; }
 }
 
 /* ---------- Phones and narrow tablets: the same objects, stacked ---------- */
@@ -293,7 +299,10 @@ html, body { overflow-x: clip; }
   .gs-mark { --u: 1px; left: 16px; top: 18px; width: 76px; height: 48px; }
   .nav { position: absolute; top: 28px; right: 16px; display: flex; gap: 26px; }
   .nav a { --u: 1px; position: relative; left: auto; top: auto; width: auto; height: auto; font-size: 1rem; }
-  .nav-sunbreak::before, .nav-linkedin::before { left: -13px; }
+  .nav-sunbreak::before, .nav-bookbell::before, .nav-linkedin::before { left: -13px; }
+  /* The GS mark already leads back to the top, so phones skip "Card" and keep room for the projects. */
+  .nav .nav-card { display: none; }
+  .nav-sunbreak::before { display: none; }
 
   .slab {
     position: relative; left: auto; top: auto;
@@ -327,4 +336,10 @@ html, body { overflow-x: clip; }
   .cta-close { height: 50px; padding: 0 14px; gap: 10px; font-size: .95rem; }
   .cta-close .ico-in { width: 22px; height: 22px; }
   .foot { flex-direction: column; align-items: center; padding-inline: 16px; }
+}
+
+/* ---------- Very small phones: the nav gets its own row under the mark ---------- */
+@media (max-width: 379px) {
+  .stage { padding-top: 124px; }
+  .nav { top: 84px; left: 16px; right: 16px; justify-content: center; gap: 24px; }
 }

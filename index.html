@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gheju Sergiu · Web developer</title>
-  <meta name="description" content="Gheju Sergiu, web developer. Featured release: Sunbreak, a private mental-health companion app.">
+  <meta name="description" content="Gheju Sergiu, web developer. Featured releases: Sunbreak, a private mental-health companion app, and Bookbell, online booking for small shops.">
   <meta name="theme-color" content="#0a2214">
   <link rel="icon" type="image/png" href="assets/plates/gs-mark.png">
   <link rel="preload" href="assets/fonts/saira-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -22,6 +22,7 @@
     <nav class="nav" aria-label="Main">
       <a class="nav-card" href="#card">Card</a>
       <a class="nav-sunbreak" href="#sunbreak">Sunbreak</a>
+      <a class="nav-bookbell" href="#bookbell">Bookbell</a>
       <a class="nav-linkedin" href="https://www.linkedin.com/in/sergiu-gheju/" rel="me noopener">LinkedIn</a>
     </nav>
 
@@ -86,6 +87,38 @@
       <p class="built">Expo · React Native · TypeScript</p>
       <a class="ghost" href="https://sunbreak.expo.app" rel="noopener">Open the live app <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
       <p class="fine">MVP, not a medical device.</p>
+    </div>
+  </section>
+
+  <section class="release" id="bookbell" aria-labelledby="bookbell-title">
+    <div class="release-head">
+      <h2 class="banner" id="bookbell-title"><span>Bookbell</span></h2>
+      <p class="release-tag">Online booking for small shops.</p>
+    </div>
+
+    <ul class="inserts" aria-label="Screens from the live Bookbell site">
+      <li class="insert">
+        <img src="assets/screens/bookbell-booking.png" alt="Bookbell booking page for a demo barber shop: services with prices, Haircut and beard selected, and a strip of days to choose from" width="390" height="844" loading="lazy">
+        <p class="insert-label">Booking page</p>
+      </li>
+      <li class="insert">
+        <img src="assets/screens/bookbell-chat.png" alt="Bookbell chat helper: it answers that there is free parking behind the shop, then shows free beard trim times as buttons" width="390" height="844" loading="lazy">
+        <p class="insert-label">Chat helper</p>
+      </li>
+      <li class="insert">
+        <img src="assets/screens/bookbell-bookings.png" alt="Bookbell owner dashboard: upcoming bookings grouped by day, each with the time, customer, service and contact details" width="390" height="844" loading="lazy">
+        <p class="insert-label">Owner's bookings</p>
+      </li>
+    </ul>
+
+    <div class="release-note">
+      <p>Online booking for barbers, salons and any shop that works by appointment. Owners set their services and hours; customers book without an account, and a chat helper answers from the owner's own notes. The database itself refuses double bookings.</p>
+      <p class="built">Next.js · TypeScript · Supabase · Postgres</p>
+      <div class="release-links">
+        <a class="ghost" href="https://bookbell.vercel.app" rel="noopener">Try the live demo <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
+        <a class="ghost" href="https://github.com/ghejus/bookbell" rel="noopener">Read the code <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
+      </div>
+      <p class="fine">Demo shops hold sample data. The chat helper runs in a free practice mode.</p>
     </div>
   </section>
 
