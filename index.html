@@ -111,6 +111,17 @@
       </li>
     </ul>
 
+    <!-- Launch film: computers get the wide cut, phones the tall one. Nothing loads until play. -->
+    <figure class="film">
+      <video class="film-wide" controls playsinline preload="none" width="1920" height="1080" poster="assets/films/bookbell-launch-poster.webp" aria-label="Bookbell launch film, 20 seconds: a customer books a haircut on a phone, the owner's Today screen gets the new booking, then the Bookbell logo and bookbell.vercel.app">
+        <source src="assets/films/bookbell-launch.mp4" type="video/mp4">
+      </video>
+      <video class="film-tall" controls playsinline preload="none" width="1080" height="1920" poster="assets/films/bookbell-launch-tall-poster.webp" aria-label="Bookbell launch film, 20 seconds: a customer books a haircut on a phone, the owner's Today screen gets the new booking, then the Bookbell logo and bookbell.vercel.app">
+        <source src="assets/films/bookbell-launch-tall.mp4" type="video/mp4">
+      </video>
+      <figcaption class="insert-label">Launch film · 20 sec</figcaption>
+    </figure>
+
     <div class="release-note">
       <p>Online booking for barbers, salons and any shop that works by appointment, as a dark phone app that opens from the home screen. Owners run their day from a Today screen and a calendar; customers book in a minute, with or without an account, and manage everything in My bookings. A chat helper answers from the owner's own notes, and the database itself refuses double bookings.</p>
       <p class="built">Next.js · TypeScript · Supabase · Postgres</p>
