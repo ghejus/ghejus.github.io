@@ -27,3 +27,32 @@ if (slab && fine.matches && !calm.matches) {
     slab.style.removeProperty("--sheen");
   });
 }
+
+// The launch film plays, muted, while at least half of it is on screen, and pauses when it leaves.
+// If the visitor pauses it themselves, it stays paused. Reduced motion: no autoplay, just the play button.
+const film = document.querySelector(".film-video");
+
+if (film && "IntersectionObserver" in window && !calm.matches) {
+  let pausedByVisitor = false;
+  let pausingForScroll = false;
+
+  film.addEventListener("pause", () => {
+    if (pausingForScroll) pausingForScroll = false;
+    else if (!film.ended) pausedByVisitor = true;
+  });
+  film.addEventListener("play", () => { pausedByVisitor = false; });
+
+  new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        if (!pausedByVisitor && film.paused && !film.ended) {
+          film.muted = true;
+          film.play().catch(() => {}); // a browser that blocks autoplay just keeps the play button
+        }
+      } else if (!film.paused) {
+        pausingForScroll = true;
+        film.pause();
+      }
+    }
+  }, { threshold: 0.5 }).observe(film);
+}
