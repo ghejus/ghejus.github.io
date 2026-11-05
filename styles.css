@@ -216,20 +216,19 @@ html, body { overflow-x: clip; }
   font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
 }
 
-/* The launch film: one wide insert on the same card stock, dropped at a slight tilt. */
+/* The launch film: a tall insert on the same card stock, a little wider than the screens, dropped at a slight tilt. */
 .film {
-  width: min(100%, 820px); margin: 96px 0 0;
-  padding: 16px 16px 12px;
+  width: clamp(240px, 24vw, 300px); margin: 96px 0 0;
+  padding: 14px 14px 12px;
   border-radius: 12px;
   background: var(--stock);
   box-shadow:
     inset 0 0 0 3px var(--stock), inset 0 0 0 5px var(--red), inset 0 0 0 8px var(--stock), inset 0 0 0 9px var(--gold-rule),
     0 18px 32px -8px rgba(0, 0, 0, .5), 0 2px 4px rgba(0, 0, 0, .3);
   color: var(--ink);
-  rotate: -1deg;
+  rotate: 1.5deg;
 }
 .film video { display: block; width: 100%; height: auto; border-radius: 6px; background: #161826; box-shadow: 0 0 0 1px rgba(18, 51, 31, .18); }
-.film .film-tall { display: none; }
 
 .release-note {
   margin-top: 96px; max-width: 34rem;
@@ -343,9 +342,7 @@ html, body { overflow-x: clip; }
   .inserts::-webkit-scrollbar { display: none; }
   .insert { flex: none; width: min(72vw, 280px); scroll-snap-align: center; }
   .insert:nth-child(n) { transform: none; }
-  .film { width: min(78vw, 320px); margin-top: 32px; padding: 12px 12px 10px; rotate: none; }
-  .film .film-wide { display: none; }
-  .film .film-tall { display: block; }
+  .film { width: min(72vw, 280px); margin-top: 32px; rotate: none; }
   .release-note { margin-top: 48px; padding-inline: 16px; }
   .release-note p:first-child { font-size: 1.125rem; }
   .close { padding: 48px 16px 96px; overflow-x: clip; }
