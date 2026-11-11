@@ -96,17 +96,27 @@
       <p class="release-tag">Online booking for small shops.</p>
     </div>
 
+    <!-- The app speaks English and Romanian: this switch swaps the three screens (script.js). Hidden without JavaScript, so the English screens just show. -->
+    <div class="lang-pick" role="group" aria-label="Language of the app screens" hidden>
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">·</span>
+      <button type="button" data-lang="ro" aria-pressed="false" lang="ro">RO</button>
+    </div>
+
     <ul class="inserts" aria-label="Screens from the live Bookbell app">
       <li class="insert">
-        <img src="assets/screens/bookbell-today.png" alt="Bookbell owner's Today screen: a Next up card for the 09:30 haircut with Call, Email and Details buttons, then the whole day's bookings with a glowing line for now, and a tab bar with a round plus button" width="390" height="844" loading="lazy">
+        <img src="assets/screens/bookbell-today.png" alt="Bookbell owner's Today screen: a Next up card for the 09:30 haircut with Call, Email and Details buttons, then the whole day's bookings with a glowing line for now, and a tab bar with a round plus button" width="390" height="844" loading="lazy"
+          data-ro-src="assets/screens/bookbell-today-ro.png" data-ro-alt="The owner's Today screen in Romanian (Azi): the Next up card (Urmează, la 09:30) with Call, Email and Details buttons, then the whole day's bookings, and the tab bar Azi, Calendar, Programări, Salon">
         <p class="insert-label">Owner's Today</p>
       </li>
       <li class="insert">
-        <img src="assets/screens/bookbell-booking.png" alt="Bookbell booking page for a demo barber shop: services with prices, Haircut and beard selected, a choice of barber, and a strip of days to choose from" width="390" height="844" loading="lazy">
+        <img src="assets/screens/bookbell-booking.png" alt="Bookbell booking page for a demo barber shop: services with prices, Haircut and beard selected, a choice of barber, and a strip of days to choose from" width="390" height="844" loading="lazy"
+          data-ro-src="assets/screens/bookbell-booking-ro.png" data-ro-alt="The booking page in Romanian for Frizeria Demo: services priced in lei, Tuns și barbă selected, a choice of barber (Oricine, Andrei, Maria), and a strip of days to choose from">
         <p class="insert-label">Booking page</p>
       </li>
       <li class="insert">
-        <img src="assets/screens/bookbell-my-bookings.png" alt="Bookbell My bookings for a customer: two upcoming bookings, each with the time, service, price and shop, and buttons to change the time, add it to a calendar or cancel" width="390" height="844" loading="lazy">
+        <img src="assets/screens/bookbell-my-bookings.png" alt="Bookbell My bookings for a customer: two upcoming bookings, each with the time, service, price and shop, and buttons to change the time, add it to a calendar or cancel" width="390" height="844" loading="lazy"
+          data-ro-src="assets/screens/bookbell-my-bookings-ro.png" data-ro-alt="My bookings in Romanian (Programările mele): two upcoming bookings at Frizeria Demo with prices in lei, and buttons to change the time (Schimbă ora), add it to a calendar or cancel (Anulează)">
         <p class="insert-label">My bookings</p>
       </li>
     </ul>
@@ -124,7 +134,6 @@
       <p class="built">Next.js · TypeScript · Supabase · Postgres</p>
       <div class="release-links">
         <a class="ghost" href="https://bookbell.vercel.app" rel="noopener">Try the live demo <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
-        <a class="ghost" href="https://github.com/ghejus/bookbell" rel="noopener">Read the code <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
       </div>
       <p class="fine">Demo shops hold sample data. The chat helper runs in a free practice mode.</p>
     </div>

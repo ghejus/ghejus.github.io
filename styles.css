@@ -192,6 +192,32 @@ html, body { overflow-x: clip; }
 .banner span { display: block; }
 .release-tag { font-family: var(--serif); font-size: clamp(1.15rem, 1rem + .5vw, 1.5rem); color: var(--gold); }
 
+/* EN · RO: two little card-stock tabs over the screens. The chosen one is face up (stock with the gold-rule ring); the other is printed in gold on the felt. */
+.lang-pick {
+  margin-top: 56px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .14em;
+  color: var(--gold);
+}
+.lang-pick[hidden] { display: none; }
+.lang-pick button {
+  min-width: 52px; min-height: 40px; padding: 8px 12px 7px;
+  border: 0; border-radius: 6px;
+  background: transparent; color: var(--gold);
+  font: inherit; letter-spacing: inherit;
+  box-shadow: inset 0 0 0 1px rgba(201, 154, 62, .55);
+  cursor: pointer;
+  transition: background-color .25s, color .25s, rotate .45s cubic-bezier(.16, 1, .3, 1);
+}
+.lang-pick button:hover { background: rgba(236, 201, 112, .12); }
+.lang-pick button[aria-pressed="true"] {
+  background: var(--stock); color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--stock), inset 0 0 0 3px var(--gold-rule), 0 6px 12px -4px rgba(0, 0, 0, .5);
+  rotate: -2deg;
+  cursor: default;
+}
+.lang-pick + .inserts { margin-top: 32px; }
+
 .inserts {
   list-style: none; margin: 72px 0 0; padding: 0;
   display: flex; justify-content: center; align-items: flex-start; gap: clamp(24px, 4vw, 64px);
@@ -298,7 +324,7 @@ html, body { overflow-x: clip; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .slab, .insert, .cta, .ghost { transition: none; }
+  .slab, .insert, .cta, .ghost, .lang-pick button { transition: none; }
   .ghost:hover { rotate: -1.5deg; translate: none; }
   .release-links .ghost:nth-child(2):hover { rotate: 1.5deg; }
 }
@@ -340,6 +366,8 @@ html, body { overflow-x: clip; }
     scrollbar-width: none;
   }
   .inserts::-webkit-scrollbar { display: none; }
+  .lang-pick { margin-top: 40px; }
+  .lang-pick + .inserts { margin-top: 8px; }
   .insert { flex: none; width: min(72vw, 280px); scroll-snap-align: center; }
   .insert:nth-child(n) { transform: none; }
   .film { width: min(72vw, 280px); margin-top: 32px; rotate: none; }

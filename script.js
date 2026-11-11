@@ -28,6 +28,37 @@ if (slab && fine.matches && !calm.matches) {
   });
 }
 
+// Bookbell's screens in English or Romanian. Each screenshot carries its Romanian
+// picture and description in data-ro-src / data-ro-alt; the English ones are kept
+// the first time we swap. The switch is hidden in the HTML so it only shows when this runs.
+const langPick = document.querySelector(".lang-pick");
+
+if (langPick) {
+  const shots = [...document.querySelectorAll("#bookbell .insert img[data-ro-src]")];
+  for (const img of shots) {
+    img.dataset.enSrc = img.getAttribute("src");
+    img.dataset.enAlt = img.getAttribute("alt");
+  }
+  const buttons = [...langPick.querySelectorAll("button[data-lang]")];
+
+  const show = (lang) => {
+    for (const img of shots) {
+      img.src = img.dataset[`${lang}Src`];
+      img.alt = img.dataset[`${lang}Alt`];
+    }
+    for (const b of buttons) b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  };
+
+  for (const b of buttons) b.addEventListener("click", () => show(b.dataset.lang));
+
+  // Fetch the Romanian pictures early when the visitor heads for the switch, so the swap is instant.
+  langPick.addEventListener("pointerenter", () => {
+    for (const img of shots) new Image().src = img.dataset.roSrc;
+  }, { once: true });
+
+  langPick.hidden = false;
+}
+
 // The launch film plays, muted, while at least half of it is on screen, and pauses when it leaves.
 // If the visitor pauses it themselves, it stays paused. Reduced motion: no autoplay, just the play button.
 const film = document.querySelector(".film-video");
