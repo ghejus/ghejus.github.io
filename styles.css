@@ -65,11 +65,12 @@ a { color: inherit; }
   text-underline-offset: .25em;
 }
 .nav a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
-.nav-card { left: calc(886 * var(--u)); width: calc(52 * var(--u)); }
-.nav-sunbreak { left: calc(980 * var(--u)); width: calc(84 * var(--u)); }
-.nav-bookbell { left: calc(1106 * var(--u)); width: calc(80 * var(--u)); }
+.nav-card { left: calc(800 * var(--u)); width: calc(52 * var(--u)); }
+.nav-sunbreak { left: calc(894 * var(--u)); width: calc(84 * var(--u)); }
+.nav-bookbell { left: calc(1020 * var(--u)); width: calc(80 * var(--u)); }
+.nav-chit { left: calc(1142 * var(--u)); width: calc(44 * var(--u)); }
 .nav-linkedin { left: calc(1232 * var(--u)); width: calc(80 * var(--u)); }
-.nav-sunbreak::before, .nav-bookbell::before, .nav-linkedin::before {
+.nav-sunbreak::before, .nav-bookbell::before, .nav-chit::before, .nav-linkedin::before {
   content: ""; position: absolute; top: 18%; bottom: 18%;
   left: calc(-20 * var(--u)); width: 1px; background: var(--gold); opacity: .8;
 }
@@ -339,7 +340,7 @@ html, body { overflow-x: clip; }
   .gs-mark { --u: 1px; left: 16px; top: 18px; width: 76px; height: 48px; }
   .nav { position: absolute; top: 28px; right: 16px; display: flex; gap: 26px; }
   .nav a { --u: 1px; position: relative; left: auto; top: auto; width: auto; height: auto; font-size: 1rem; }
-  .nav-sunbreak::before, .nav-bookbell::before, .nav-linkedin::before { left: -13px; }
+  .nav-sunbreak::before, .nav-bookbell::before, .nav-chit::before, .nav-linkedin::before { left: -13px; }
   /* The GS mark already leads back to the top, so phones skip "Card" and keep room for the projects. */
   .nav .nav-card { display: none; }
   .nav-sunbreak::before { display: none; }
@@ -381,8 +382,13 @@ html, body { overflow-x: clip; }
   .foot { flex-direction: column; align-items: center; padding-inline: 16px; }
 }
 
-/* ---------- Very small phones: the nav gets its own row under the mark ---------- */
-@media (max-width: 379px) {
+/* ---------- Phones: four links no longer fit beside the mark, so the nav gets its own row under it ---------- */
+@media (max-width: 439px) {
   .stage { padding-top: 124px; }
   .nav { top: 84px; left: 16px; right: 16px; justify-content: center; gap: 24px; }
+}
+/* The narrowest phones: pull the links a little closer so the row keeps its side gutters. */
+@media (max-width: 339px) {
+  .nav { gap: 16px; }
+  .nav-bookbell::before, .nav-chit::before, .nav-linkedin::before { left: -8px; }
 }

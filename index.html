@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gheju Sergiu · Web developer</title>
-  <meta name="description" content="Gheju Sergiu, web developer. Featured releases: Sunbreak, a private mental-health companion app, and Bookbell, online booking for small shops.">
+  <meta name="description" content="Gheju Sergiu, web developer. Featured releases: Sunbreak, a private mental-health companion app, Bookbell, online booking for small shops, and Chit, a bill splitter for friends.">
   <meta name="theme-color" content="#0a2214">
   <link rel="icon" type="image/png" href="assets/plates/gs-mark.png">
   <link rel="preload" href="assets/fonts/saira-extra-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -23,6 +23,7 @@
       <a class="nav-card" href="#card">Card</a>
       <a class="nav-sunbreak" href="#sunbreak">Sunbreak</a>
       <a class="nav-bookbell" href="#bookbell">Bookbell</a>
+      <a class="nav-chit" href="#chit">Chit</a>
       <a class="nav-linkedin" href="https://www.linkedin.com/in/sergiu-gheju/" rel="me noopener">LinkedIn</a>
     </nav>
 
@@ -136,6 +137,37 @@
         <a class="ghost" href="https://bookbell.vercel.app" rel="noopener">Try the live demo <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
       </div>
       <p class="fine">Demo shops hold sample data. The chat helper runs in a free practice mode.</p>
+    </div>
+  </section>
+
+  <section class="release" id="chit" aria-labelledby="chit-title">
+    <div class="release-head">
+      <h2 class="banner" id="chit-title"><span>Chit</span></h2>
+      <p class="release-tag">Split bills, stay friends.</p>
+    </div>
+
+    <ul class="inserts" aria-label="Screens from the live Chit demo">
+      <li class="insert">
+        <img src="assets/screens/chit-groups.png" alt="Chit Groups screen: an Overall card saying You are owed 493.37 lei in green, then three groups, Seaside trip, Flat 12 and Lisbon, each with what you owe or are owed, and a floating glass tab bar with a round plus button" width="390" height="844" loading="lazy">
+        <p class="insert-label">Groups</p>
+      </li>
+      <li class="insert">
+        <img src="assets/screens/chit-group.png" alt="Chit group screen for Seaside trip: Ioana owes you 584.09 lei, Settle up and Balances buttons, then November's bills such as Groceries, Fish dinner and Fuel, each marked you lent in green or you borrowed in orange" width="390" height="844" loading="lazy">
+        <p class="insert-label">A trip's bills</p>
+      </li>
+      <li class="insert">
+        <img src="assets/screens/chit-add.png" alt="Chit Add expense sheet, slid up over the group: Boat ride for 240 lei, paid by You, split equally between three of the four friends at 80 lei each, with Mihai left out" width="390" height="844" loading="lazy">
+        <p class="insert-label">Add a bill</p>
+      </li>
+    </ul>
+
+    <div class="release-note">
+      <p>A shared notebook for money. Friends put their bills in a group, and Chit keeps score of who owes whom, then works out the fewest payments that make everyone even. Bills split equally, by amounts or by percent, counted in whole cents so no penny goes missing. The sheets follow your finger: drag one, throw it, or catch it mid-slide and turn it around.</p>
+      <p class="built">Next.js · TypeScript · Motion</p>
+      <div class="release-links">
+        <a class="ghost" href="https://chit-split.vercel.app" rel="noopener">Try the live demo <svg class="ico-sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow"/></svg></a>
+      </div>
+      <p class="fine">A demo with made-up friends. Everything stays in your browser; there are no accounts.</p>
     </div>
   </section>
 
